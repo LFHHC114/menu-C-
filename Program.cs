@@ -169,3 +169,78 @@ static void ListBooksBorrowed() => Console.WriteLine("Listar libros prestados (s
 static void EditBookTitle() => Console.WriteLine("Editar título del libro (simulación).");
 static void EditBookAuthor() => Console.WriteLine("Editar autor del libro (simulación).");
 static void EditBookYearCategory() => Console.WriteLine("Editar año/categoría del libro (simulación).");
+
+static void ShowLoansMenu()
+{
+    int option = 0;
+
+    do
+    {
+        Console.Clear();
+        Console.WriteLine("=== MENÚ PRÉSTAMOS ===");
+        Console.WriteLine("1. Crear préstamo");
+        Console.WriteLine("2. Listar préstamos");
+        Console.WriteLine("3. Ver detalle préstamo");
+        Console.WriteLine("4. Registrar devolución");
+        Console.WriteLine("5. Eliminar préstamo");
+        Console.WriteLine("0. Volver");
+        Console.Write("Seleccione una opción: ");
+
+        int.TryParse(Console.ReadLine(), out option);
+
+        switch (option)
+        {
+            case 1: CreateLoan(); break;
+            case 2: ListLoansMenu(); break;
+            case 3: ViewLoanDetail(); break;
+            case 4: RegisterReturn(); break;
+            case 5: DeleteLoan(); break;
+            case 0: return;
+            default:
+                Console.WriteLine("Opción inválida");
+                Console.ReadKey();
+                break;
+        }
+
+    } while (option != 0);
+}
+
+static void ListLoansMenu()
+{
+    int option = 0;
+
+    do
+    {
+        Console.Clear();
+        Console.WriteLine("=== LISTAR PRÉSTAMOS ===");
+        Console.WriteLine("1. Todos");
+        Console.WriteLine("2. Activos");
+        Console.WriteLine("3. Cerrados");
+        Console.WriteLine("0. Volver");
+        Console.Write("Seleccione una opción: ");
+
+        int.TryParse(Console.ReadLine(), out option);
+
+        switch (option)
+        {
+            case 1: ListLoansAll(); break;
+            case 2: ListLoansActive(); break;
+            case 3: ListLoansClosed(); break;
+            case 0: return;
+            default:
+                Console.WriteLine("Opción inválida");
+                Console.ReadKey();
+                break;
+        }
+
+    } while (option != 0);
+}
+
+static void CreateLoan() => Console.WriteLine("Crear préstamo (simulación).");
+static void ViewLoanDetail() => Console.WriteLine("Ver detalle de préstamo (simulación).");
+static void RegisterReturn() => Console.WriteLine("Registrar devolución (simulación).");
+static void DeleteLoan() => Console.WriteLine("Eliminar préstamo (simulación).");
+
+static void ListLoansAll() => Console.WriteLine("Listar todos los préstamos (simulación).");
+static void ListLoansActive() => Console.WriteLine("Listar préstamos activos (simulación).");
+static void ListLoansClosed() => Console.WriteLine("Listar préstamos cerrados (simulación).");
