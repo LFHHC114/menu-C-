@@ -12,3 +12,4 @@ C:\Users\hurta\OneDrive\Escritorio\trabajo de c#\BibliotecaMenu\obj\Debug\net10.
 C:\Users\hurta\OneDrive\Escritorio\trabajo de c#\BibliotecaMenu\obj\Debug\net10.0\BibliotecaMenu.pdb
 C:\Users\hurta\OneDrive\Escritorio\trabajo de c#\BibliotecaMenu\obj\Debug\net10.0\BibliotecaMenu.genruntimeconfig.cache
 C:\Users\hurta\OneDrive\Escritorio\trabajo de c#\BibliotecaMenu\obj\Debug\net10.0\ref\BibliotecaMenu.dll
+C:\Users\hurta\OneDrive\Escritorio\trabajo de c#\BibliotecaMenu\obj\Debug\net10.0\BibliotecaMenu.sourcelink.json
