@@ -169,3 +169,38 @@ static void ListBooksBorrowed() => Console.WriteLine("Listar libros prestados (s
 static void EditBookTitle() => Console.WriteLine("Editar título del libro (simulación).");
 static void EditBookAuthor() => Console.WriteLine("Editar autor del libro (simulación).");
 static void EditBookYearCategory() => Console.WriteLine("Editar año/categoría del libro (simulación).");
+
+static void ShowPersistenceMenu()
+{
+    int option = 0;
+
+    do
+    {
+        Console.Clear();
+        Console.WriteLine("=== PERSISTENCIA ===");
+        Console.WriteLine("1. Guardar datos");
+        Console.WriteLine("2. Cargar datos");
+        Console.WriteLine("3. Reiniciar datos");
+        Console.WriteLine("0. Volver");
+        Console.Write("Seleccione una opción: ");
+
+        int.TryParse(Console.ReadLine(), out option);
+
+        switch (option)
+        {
+            case 1: SaveData(); break;
+            case 2: LoadData(); break;
+            case 3: ConfirmResetData(); break;
+            case 0: return;
+            default:
+                Console.WriteLine("Opción inválida");
+                Console.ReadKey();
+                break;
+        }
+
+    } while (option != 0);
+}
+
+static void SaveData() => Console.WriteLine("Guardar datos en archivo (simulación).");
+static void LoadData() => Console.WriteLine("Cargar datos desde archivo (simulación).");
+static void ConfirmResetData() => Console.WriteLine("Confirmar reinicio de datos (simulación).");
