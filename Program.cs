@@ -169,3 +169,75 @@ static void ListBooksBorrowed() => Console.WriteLine("Listar libros prestados (s
 static void EditBookTitle() => Console.WriteLine("Editar título del libro (simulación).");
 static void EditBookAuthor() => Console.WriteLine("Editar autor del libro (simulación).");
 static void EditBookYearCategory() => Console.WriteLine("Editar año/categoría del libro (simulación).");
+
+static void ShowSearchReportsMenu()
+{
+    int option = 0;
+
+    do
+    {
+        Console.Clear();
+        Console.WriteLine("=== BÚSQUEDAS Y REPORTES ===");
+        Console.WriteLine("1. Buscar libro");
+        Console.WriteLine("2. Buscar usuario");
+        Console.WriteLine("3. Reportes");
+        Console.WriteLine("0. Volver");
+        Console.Write("Seleccione una opción: ");
+
+        int.TryParse(Console.ReadLine(), out option);
+
+        switch (option)
+        {
+            case 1: SearchBook(); break;
+            case 2: SearchUser(); break;
+            case 3: ShowReportsMenu(); break;
+            case 0: return;
+            default:
+                Console.WriteLine("Opción inválida");
+                Console.ReadKey();
+                break;
+        }
+
+    } while (option != 0);
+}
+
+static void ShowReportsMenu()
+{
+    int option = 0;
+
+    do
+    {
+        Console.Clear();
+        Console.WriteLine("=== REPORTES ===");
+        Console.WriteLine("1. Reporte por usuario");
+        Console.WriteLine("2. Reporte por libro");
+        Console.WriteLine("3. Libros vencidos");
+        Console.WriteLine("4. Resumen");
+        Console.WriteLine("0. Volver");
+        Console.Write("Seleccione una opción: ");
+
+        int.TryParse(Console.ReadLine(), out option);
+
+        switch (option)
+        {
+            case 1: ReportByUser(); break;
+            case 2: ReportByBook(); break;
+            case 3: ReportOverdue(); break;
+            case 4: ReportSummary(); break;
+            case 0: return;
+            default:
+                Console.WriteLine("Opción inválida");
+                Console.ReadKey();
+                break;
+        }
+
+    } while (option != 0);
+}
+
+static void SearchBook() => Console.WriteLine("Buscar libro (simulación).");
+static void SearchUser() => Console.WriteLine("Buscar usuario (simulación).");
+
+static void ReportByUser() => Console.WriteLine("Reporte por usuario (simulación).");
+static void ReportByBook() => Console.WriteLine("Reporte por libro (simulación).");
+static void ReportOverdue() => Console.WriteLine("Libros vencidos (simulación).");
+static void ReportSummary() => Console.WriteLine("Resumen general (simulación).");
