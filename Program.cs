@@ -15,7 +15,7 @@ class Program
     do
     {
         Console.Clear();
-        Console.WriteLine("=== SISTEMA DE BIBLIOTECA ===");
+        Console.WriteLine("== SISTEMA DE BIBLIOTECA ==");
         Console.WriteLine("1. Libros");
         Console.WriteLine("2. Usuarios");
         Console.WriteLine("3. Préstamos");
