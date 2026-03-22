@@ -169,3 +169,17 @@ static void ListBooksBorrowed() => Console.WriteLine("Listar libros prestados (s
 static void EditBookTitle() => Console.WriteLine("Editar título del libro (simulación).");
 static void EditBookAuthor() => Console.WriteLine("Editar autor del libro (simulación).");
 static void EditBookYearCategory() => Console.WriteLine("Editar año/categoría del libro (simulación).");
+
+static void ConfirmExitAndSave()
+{
+    Console.WriteLine("¿Desea guardar antes de salir? (S/N)");
+    string answer = Console.ReadLine();
+
+    if (answer.ToUpper() == "S")
+    {
+        SaveData();
+    }
+
+    Console.WriteLine("Saliendo del sistema...");
+    Console.ReadKey();
+}
