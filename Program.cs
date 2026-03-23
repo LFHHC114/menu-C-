@@ -4,7 +4,7 @@ class Program
 {
     static void Main()
     {
-        TestModels();
+        
         ShowMainMenu();
     }
       
@@ -63,7 +63,8 @@ class Program
             Console.WriteLine("3. Préstamos");
             Console.WriteLine("4. Búsquedas y reportes");
             Console.WriteLine("5. Guardar / Cargar datos");
-            Console.WriteLine("6. Salir");
+            Console.WriteLine("6. Salir Probar modelos (POO)");
+            Console.WriteLine("7. Salir");
             Console.Write("Seleccione una opción: ");
 
             if (!int.TryParse(Console.ReadLine(), out option))
@@ -80,14 +81,15 @@ class Program
                 case 3: ShowLoansMenu(); break;
                 case 4: ShowSearchReportsMenu(); break;
                 case 5: ShowPersistenceMenu(); break;
-                case 6: ConfirmExitAndSave(); break;
+                case 6: TestModels(); break;
+                case 7: ConfirmExitAndSave(); break;
                 default:
                     Console.WriteLine("Opción inválida");
                     Console.ReadKey();
                     break;
             }
 
-        } while (option != 6);
+        } while (option != 7);
     }
 
     // ==============================
