@@ -7,6 +7,7 @@ C:\Users\hurta\OneDrive\Escritorio\trabajo de c#\BibliotecaMenu\obj\Debug\net10.
 C:\Users\hurta\OneDrive\Escritorio\trabajo de c#\BibliotecaMenu\obj\Debug\net10.0\BibliotecaMenu.AssemblyInfoInputs.cache
 C:\Users\hurta\OneDrive\Escritorio\trabajo de c#\BibliotecaMenu\obj\Debug\net10.0\BibliotecaMenu.AssemblyInfo.cs
 C:\Users\hurta\OneDrive\Escritorio\trabajo de c#\BibliotecaMenu\obj\Debug\net10.0\BibliotecaMenu.csproj.CoreCompileInputs.cache
+C:\Users\hurta\OneDrive\Escritorio\trabajo de c#\BibliotecaMenu\obj\Debug\net10.0\BibliotecaMenu.sourcelink.json
 C:\Users\hurta\OneDrive\Escritorio\trabajo de c#\BibliotecaMenu\obj\Debug\net10.0\BibliotecaMenu.dll
 C:\Users\hurta\OneDrive\Escritorio\trabajo de c#\BibliotecaMenu\obj\Debug\net10.0\refint\BibliotecaMenu.dll
 C:\Users\hurta\OneDrive\Escritorio\trabajo de c#\BibliotecaMenu\obj\Debug\net10.0\BibliotecaMenu.pdb
