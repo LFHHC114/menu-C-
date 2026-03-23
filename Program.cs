@@ -4,9 +4,48 @@ class Program
 {
     static void Main()
     {
+        TestModels();
         ShowMainMenu();
     }
+      
+      static void TestModels()
+{
+    Console.Clear();
+    Console.WriteLine("=== PRUEBA DE MODELOS ===");
 
+    // LIBROS
+    Libro libro1 = new Libro(1, "Cien años de soledad", "Gabriel García Márquez", 1967, "Novela");
+    Libro libro2 = new Libro(2, "1984", "George Orwell", 1949, "Distopía");
+
+    // USUARIOS
+    Usuario user1 = new Usuario(1, "Juan", "123456");
+    Usuario user2 = new Usuario(2, "Ana", "789456");
+
+    // PRÉSTAMO
+    Prestamo prestamo1 = new Prestamo(1, libro1, user1, DateTime.Now.AddDays(-10));
+
+    Console.WriteLine("\n--- LIBROS ---");
+    Console.WriteLine(libro1.ResumenCorto());
+    Console.WriteLine(libro1.DetalleCompleto());
+
+    Console.WriteLine("\n--- USUARIOS ---");
+    Console.WriteLine(user1.ResumenCorto());
+    Console.WriteLine(user1.DetalleCompleto());
+
+    Console.WriteLine("\n--- PRÉSTAMO ---");
+    Console.WriteLine(prestamo1.ResumenCorto());
+    Console.WriteLine(prestamo1.DetalleCompleto());
+
+    Console.WriteLine("\n--- VALIDACIONES ---");
+    Console.WriteLine("Disponible: " + libro1.Disponible);
+    Console.WriteLine("Usuario activo: " + user1.Activo);
+    Console.WriteLine("Estado préstamo: " + prestamo1.Estado);
+    Console.WriteLine("¿Está vencido?: " + prestamo1.EstaVencido());
+    Console.WriteLine("Días transcurridos: " + prestamo1.DiasTranscurridos());
+
+    Console.WriteLine("\nPresione una tecla para volver...");
+    Console.ReadKey();
+}
     // ==============================
     // MENÚ PRINCIPAL
     // ==============================
