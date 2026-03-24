@@ -4,7 +4,7 @@ class Program
 {
     static void Main()
     {
-        
+        TestModels();
         ShowMainMenu();
     }
       
@@ -51,47 +51,45 @@ class Program
     // ==============================
 
     static void ShowMainMenu()
-{
-    int option;
-
-    do
     {
-        Console.Clear();
+        int option;
 
-        Console.WriteLine("=== SISTEMA DE BIBLIOTECA ===");
-        Console.WriteLine("1. Libros");
-        Console.WriteLine("2. Usuarios");
-        Console.WriteLine("3. Préstamos");
-        Console.WriteLine("4. Búsquedas y reportes");
-        Console.WriteLine("5. Guardar / Cargar datos");
-        Console.WriteLine("6. Probar modelos (POO)");
-        Console.WriteLine("7. Salir");
-        Console.Write("Seleccione una opción: ");
-
-        if (!int.TryParse(Console.ReadLine(), out option))
+        do
         {
-            Console.WriteLine("Opción inválida");
-            Console.ReadKey();
-            continue;
-        }
+            Console.Clear();
+            Console.WriteLine("=== SISTEMA DE BIBLIOTECA ===");
+            Console.WriteLine("1. Libros");
+            Console.WriteLine("2. Usuarios");
+            Console.WriteLine("3. Préstamos");
+            Console.WriteLine("4. Búsquedas y reportes");
+            Console.WriteLine("5. Guardar / Cargar datos");
+            Console.WriteLine("6. Salir");
+            Console.Write("Seleccione una opción: ");
 
-        switch (option)
-        {
-            case 1: ShowBooksMenu(); break;
-            case 2: ShowUsersMenu(); break;
-            case 3: ShowLoansMenu(); break;
-            case 4: ShowSearchReportsMenu(); break;
-            case 5: ShowPersistenceMenu(); break;
-            case 6: TestModels(); break;
-            case 7: ConfirmExitAndSave(); break;
-            default:
+            if (!int.TryParse(Console.ReadLine(), out option))
+            {
                 Console.WriteLine("Opción inválida");
                 Console.ReadKey();
-                break;
-        }
+                continue;
+            }
 
-    } while (option != 7);
-}
+            switch (option)
+            {
+                case 1: ShowBooksMenu(); break;
+                case 2: ShowUsersMenu(); break;
+                case 3: ShowLoansMenu(); break;
+                case 4: ShowSearchReportsMenu(); break;
+                case 5: ShowPersistenceMenu(); break;
+                case 6: ConfirmExitAndSave(); break;
+                default:
+                    Console.WriteLine("Opción inválida");
+                    Console.ReadKey();
+                    break;
+            }
+
+        } while (option != 6);
+    }
+
     // ==============================
     // LIBROS
     // ==============================
