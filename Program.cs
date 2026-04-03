@@ -46,9 +46,64 @@ class Program
     Console.WriteLine("\nPresione una tecla para volver...");
     Console.ReadKey();
 }
+
+// ============================
+    // PRUEBA SERVICES
+    // ============================
+    static void TestServices()
+    {
+        Console.Clear();
+        Console.WriteLine("=== PRUEBA SERVICES ===");
+
+        var libroService = new LibroService();
+        var usuarioService = new UsuarioService();
+        var prestamoService = new PrestamoService();
+
+        var libro = new Libro(1, "1984", "Orwell", 1949, "Distopía");
+        var usuario = new Usuario(1, "Juan", "123");
+
+        libroService.AgregarLibro(libro);
+        usuarioService.AgregarUsuario(usuario);
+
+        var prestamo = new Prestamo(1, libro, usuario, DateTime.Now.AddDays(-5));
+        prestamoService.AgregarPrestamo(prestamo);
+
+        Console.WriteLine("\n--- KPIs LIBROS ---");
+        Console.WriteLine("Total: " + libroService.TotalLibros());
+        Console.WriteLine("Disponibles: " + libroService.LibrosDisponibles());
+
+        Console.WriteLine("\n--- KPIs USUARIOS ---");
+        Console.WriteLine("Activos: " + usuarioService.UsuariosActivos());
+
+        Console.WriteLine("\n--- KPIs PRÉSTAMOS ---");
+        Console.WriteLine("Total: " + prestamoService.TotalPrestamos());
+
+        Console.ReadKey();
+    }
+
+    // ============================
+    // ARRAY VS LIST
+    // ============================
+    static void ComparacionArrayList()
+    {
+        Console.Clear();
+
+        Console.WriteLine("=== ARRAY ===");
+        int[] numeros = new int[3] { 1, 2, 3 };
+        Console.WriteLine("Tamaño fijo (no crece)");
+
+        Console.WriteLine("\n=== LIST ===");
+        List<int> lista = new List<int> { 1, 2, 3 };
+        lista.Add(4);
+        Console.WriteLine("Tamaño dinámico (sí crece)");
+
+        Console.ReadKey();
+    }
+
     // ==============================
     // MENÚ PRINCIPAL
     // ==============================
+
 
     static void ShowMainMenu()
     {
@@ -56,14 +111,15 @@ class Program
 
         do
         {
-            Console.Clear();
-            Console.WriteLine("=== SISTEMA DE BIBLIOTECA ===");
             Console.WriteLine("1. Libros");
             Console.WriteLine("2. Usuarios");
             Console.WriteLine("3. Préstamos");
             Console.WriteLine("4. Búsquedas y reportes");
             Console.WriteLine("5. Guardar / Cargar datos");
-            Console.WriteLine("6. Salir");
+            Console.WriteLine("6. Probar modelos");
+            Console.WriteLine("7. Probar services");
+            Console.WriteLine("8. Comparación Array vs List");
+            Console.WriteLine("9. Salir");
             Console.Write("Seleccione una opción: ");
 
             if (!int.TryParse(Console.ReadLine(), out option))
@@ -80,15 +136,19 @@ class Program
                 case 3: ShowLoansMenu(); break;
                 case 4: ShowSearchReportsMenu(); break;
                 case 5: ShowPersistenceMenu(); break;
-                case 6: ConfirmExitAndSave(); break;
+                case 6: TestModels(); break;
+                case 7: TestServices(); break;
+                case 8: ComparacionArrayList(); break;
+                case 9: ConfirmExitAndSave(); break;
                 default:
-                    Console.WriteLine("Opción inválida");
+                    Console.WriteLine("Opción no válida");
                     Console.ReadKey();
                     break;
             }
 
-        } while (option != 6);
+        } while (option != 9);
     }
+
 
     // ==============================
     // LIBROS
