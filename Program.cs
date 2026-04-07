@@ -51,6 +51,7 @@ class Program
     Console.ReadKey();
 }
 
+<<<<<<< HEAD
 static void TestServices()
 {
     Console.Clear();
@@ -177,6 +178,42 @@ static void TestServices()
     Console.WriteLine("\nPresione una tecla para volver...");
     Console.ReadKey();
 }
+=======
+// ============================
+    // PRUEBA SERVICES
+    // ============================
+    static void TestServices()
+    {
+        Console.Clear();
+        Console.WriteLine("=== PRUEBA SERVICES ===");
+
+        var libroService = new LibroService();
+        var usuarioService = new UsuarioService();
+        var prestamoService = new PrestamoService();
+
+        var libro = new Libro(1, "1984", "Orwell", 1949, "Distopía");
+        var usuario = new Usuario(1, "Juan", "123");
+
+        libroService.AgregarLibro(libro);
+        usuarioService.AgregarUsuario(usuario);
+
+        var prestamo = new Prestamo(1, libro, usuario, DateTime.Now.AddDays(-5));
+        prestamoService.AgregarPrestamo(prestamo);
+
+        Console.WriteLine("\n--- KPIs LIBROS ---");
+        Console.WriteLine("Total: " + libroService.TotalLibros());
+        Console.WriteLine("Disponibles: " + libroService.LibrosDisponibles());
+
+        Console.WriteLine("\n--- KPIs USUARIOS ---");
+        Console.WriteLine("Activos: " + usuarioService.UsuariosActivos());
+
+        Console.WriteLine("\n--- KPIs PRÉSTAMOS ---");
+        Console.WriteLine("Total: " + prestamoService.TotalPrestamos());
+
+        Console.ReadKey();
+    }
+
+>>>>>>> feature/services-kpis
     // ============================
     // ARRAY VS LIST
     // ============================
@@ -207,8 +244,11 @@ static void TestServices()
 
         do
         {
+<<<<<<< HEAD
             Console.Clear();
 
+=======
+>>>>>>> feature/services-kpis
             Console.WriteLine("1. Libros");
             Console.WriteLine("2. Usuarios");
             Console.WriteLine("3. Préstamos");

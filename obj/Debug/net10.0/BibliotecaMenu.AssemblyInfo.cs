@@ -13,7 +13,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BibliotecaMenu")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+<<<<<<< HEAD
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e027f5856ca9dee7aefe4acc9b0ade12d0ac625d")]
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+20c2e60fa1b507df1623ca7589bb884735b49787")]
+>>>>>>> feature/services-kpis
 [assembly: System.Reflection.AssemblyProductAttribute("BibliotecaMenu")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BibliotecaMenu")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
