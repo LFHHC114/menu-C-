@@ -6,6 +6,7 @@ public class PrestamoService
 {
     private List<Prestamo> prestamos = new List<Prestamo>();
 
+
     public void AgregarPrestamo(Prestamo prestamo)
     {
         prestamos.Add(prestamo);
@@ -26,18 +27,33 @@ public class PrestamoService
         return prestamos.OrderBy(p => p.FechaPrestamo).ToList();
     }
 
-    // KPIs
-    public int TotalPrestamos() => prestamos.Count;
+   
+    public int TotalPrestamos()
+    {
+        return prestamos.Count;
+    }
 
-    public int PrestamosActivos() => prestamos.Count(p => p.Estado == EstadoPrestamo.Activo);
+    public int PrestamosActivos()
+    {
+        return prestamos.Count(p => p.Estado == EstadoPrestamo.Activo);
+    }
 
-    public int PrestamosVencidos() => prestamos.Count(p => p.Estado == EstadoPrestamo.Vencido);
+    
+    public int PrestamosVencidos()
+    {
+        return prestamos.Count(p => p.EstaVencido());
+    }
 
-    public int PrestamosDevueltos() => prestamos.Count(p => p.Estado == EstadoPrestamo.Devuelto);
+    public int PrestamosDevueltos()
+    {
+        return prestamos.Count(p => p.Estado == EstadoPrestamo.Devuelto);
+    }
 
     public double PromedioDiasPrestamo()
     {
-        if (prestamos.Count == 0) return 0;
+        if (prestamos.Count == 0)
+            return 0;
+
         return prestamos.Average(p => p.DiasTranscurridos());
     }
 }
