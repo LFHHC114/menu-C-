@@ -26,6 +26,12 @@ public class UsuarioService
         return usuarios.OrderBy(u => u.Nombre).ToList();
     }
 
+    public void EliminarUsuario(int id)
+  {
+    var usuario = usuarios.FirstOrDefault(u => u.Id == id);
+    if (usuario != null)
+        usuarios.Remove(usuario);
+  }
     // KPIs
     public int TotalUsuarios() => usuarios.Count;
 

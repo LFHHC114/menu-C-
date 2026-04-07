@@ -26,6 +26,14 @@ public class LibroService
         return libros.OrderBy(l => l.Titulo).ToList();
     }
 
+    
+   public void EliminarLibro(int id)
+  {
+    var libro = libros.FirstOrDefault(l => l.Id == id);
+    if (libro != null)
+        libros.Remove(libro);
+  }
+
     // KPIs
     public int TotalLibros() => libros.Count;
 
